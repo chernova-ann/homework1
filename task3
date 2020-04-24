@@ -1,0 +1,225 @@
+ann@ann-VirtualBox:/var/lib/mysql$ mysqldump example > example.sql
+bash: example.sql: Отказано в доступе
+ann@ann-VirtualBox:/var/lib/mysql$ sudo mysqldump example > example.sql
+bash: example.sql: Отказано в доступе
+ann@ann-VirtualBox:/var/lib/mysql$ ll 
+итого 171184
+drwxr-xr-x  8 mysql mysql     4096 апр 24 14:34  ./
+drwxr-xr-x 66 root  root      4096 апр 15 21:19  ../
+-rw-r-----  1 mysql mysql       56 апр 15 21:19  auto.cnf
+-rw-r-----  1 mysql mysql      502 апр 15 21:19  binlog.000001
+-rw-r-----  1 mysql mysql    86207 апр 24 14:36  binlog.000002
+-rw-r-----  1 mysql mysql       32 апр 15 21:19  binlog.index
+-rw-------  1 mysql mysql     1680 апр 15 21:19  ca-key.pem
+-rw-r--r--  1 mysql mysql     1112 апр 15 21:19  ca.pem
+-rw-r--r--  1 mysql mysql     1112 апр 15 21:19  client-cert.pem
+-rw-------  1 mysql mysql     1680 апр 15 21:19  client-key.pem
+drwxr-x---  2 mysql mysql     4096 апр 24 14:36  example/
+-rw-r-----  1 mysql mysql     3609 апр 15 21:19  ib_buffer_pool
+-rw-r-----  1 mysql mysql 12582912 апр 24 14:37  ibdata1
+-rw-r-----  1 mysql mysql 50331648 апр 24 14:37  ib_logfile0
+-rw-r-----  1 mysql mysql 50331648 апр 15 21:19  ib_logfile1
+-rw-r-----  1 mysql mysql 12582912 апр 15 21:19  ibtmp1
+drwxr-x---  2 mysql mysql     4096 апр 15 21:19 '#innodb_temp'/
+drwxr-x---  2 mysql mysql     4096 апр 21 13:08  mysql/
+-rw-r-----  1 mysql mysql 25165824 апр 24 14:36  mysql.ibd
+drwxr-x---  2 mysql mysql     4096 апр 15 21:19  performance_schema/
+-rw-------  1 mysql mysql     1680 апр 15 21:19  private_key.pem
+-rw-r--r--  1 mysql mysql      452 апр 15 21:19  public_key.pem
+-rw-r--r--  1 mysql mysql     1112 апр 15 21:19  server-cert.pem
+-rw-------  1 mysql mysql     1676 апр 15 21:19  server-key.pem
+drwxr-x---  2 mysql mysql     4096 апр 24 12:32  shop/
+drwxr-x---  2 mysql mysql     4096 апр 15 21:19  sys/
+-rw-r-----  1 mysql mysql 11534336 апр 24 14:36  undo_001
+-rw-r-----  1 mysql mysql 12582912 апр 24 14:36  undo_002
+ann@ann-VirtualBox:/var/lib/mysql$ sudo chmod o+rwx /var/lib/mysql/example
+[sudo] пароль для ann: 
+ann@ann-VirtualBox:/var/lib/mysql$ mysqldump example > example.sql
+bash: example.sql: Отказано в доступе
+ann@ann-VirtualBox:/var/lib/mysql$ sudo chmod g+rx /var/lib/mysql/example/
+ann@ann-VirtualBox:/var/lib/mysql$ ll
+итого 171184
+drwxr-xr-x  8 mysql mysql     4096 апр 24 14:34  ./
+drwxr-xr-x 66 root  root      4096 апр 15 21:19  ../
+-rw-r-----  1 mysql mysql       56 апр 15 21:19  auto.cnf
+-rw-r-----  1 mysql mysql      502 апр 15 21:19  binlog.000001
+-rw-r-----  1 mysql mysql    86207 апр 24 14:36  binlog.000002
+-rw-r-----  1 mysql mysql       32 апр 15 21:19  binlog.index
+-rw-------  1 mysql mysql     1680 апр 15 21:19  ca-key.pem
+-rw-r--r--  1 mysql mysql     1112 апр 15 21:19  ca.pem
+-rw-r--r--  1 mysql mysql     1112 апр 15 21:19  client-cert.pem
+-rw-------  1 mysql mysql     1680 апр 15 21:19  client-key.pem
+drwxr-xrwx  2 mysql mysql     4096 апр 24 14:36  example/
+-rw-r-----  1 mysql mysql     3609 апр 15 21:19  ib_buffer_pool
+-rw-r-----  1 mysql mysql 12582912 апр 24 14:37  ibdata1
+-rw-r-----  1 mysql mysql 50331648 апр 24 14:37  ib_logfile0
+-rw-r-----  1 mysql mysql 50331648 апр 15 21:19  ib_logfile1
+-rw-r-----  1 mysql mysql 12582912 апр 15 21:19  ibtmp1
+drwxr-x---  2 mysql mysql     4096 апр 15 21:19 '#innodb_temp'/
+drwxr-x---  2 mysql mysql     4096 апр 21 13:08  mysql/
+-rw-r-----  1 mysql mysql 25165824 апр 24 14:36  mysql.ibd
+drwxr-x---  2 mysql mysql     4096 апр 15 21:19  performance_schema/
+-rw-------  1 mysql mysql     1680 апр 15 21:19  private_key.pem
+-rw-r--r--  1 mysql mysql      452 апр 15 21:19  public_key.pem
+-rw-r--r--  1 mysql mysql     1112 апр 15 21:19  server-cert.pem
+-rw-------  1 mysql mysql     1676 апр 15 21:19  server-key.pem
+drwxr-x---  2 mysql mysql     4096 апр 24 12:32  shop/
+drwxr-x---  2 mysql mysql     4096 апр 15 21:19  sys/
+-rw-r-----  1 mysql mysql 11534336 апр 24 14:36  undo_001
+-rw-r-----  1 mysql mysql 12582912 апр 24 14:36  undo_002
+ann@ann-VirtualBox:/var/lib/mysql$ mysqldump example > examp_1.sql
+bash: examp_1.sql: Отказано в доступе
+ann@ann-VirtualBox:/var/lib/mysql/example$ cd ..
+ann@ann-VirtualBox:/var/lib/mysql$ sudo mysqldump example > examp_1.sql
+bash: examp_1.sql: Отказано в доступе
+ann@ann-VirtualBox:/var/lib/mysql$ sudo chmod g+rwx /var/lib/mysql/example/
+ann@ann-VirtualBox:/var/lib/mysql$ cd ..
+ann@ann-VirtualBox:/var/lib$ sudo chmod g+rwx /var/lib/mysql
+ann@ann-VirtualBox:/var/lib$ sudo chmod o+rwx /var/lib/mysql
+ann@ann-VirtualBox:/var/lib$ ll
+итого 264
+drwxr-xr-x 66 root          root          4096 апр 15 21:19 ./
+drwxr-xr-x 14 root          root          4096 фев  3 21:30 ../
+drwxr-xr-x  4 root          root          4096 фев  3 21:23 AccountsService/
+drwxr-xr-x  2 root          root          4096 мая  1  2013 acpi-support/
+drwxr-xr-x  2 root          root          4096 фев 16  2017 alsa/
+drwxr-xr-x  4 root          root          4096 апр 24 09:55 app-info/
+drwxr-xr-x  5 root          root          4096 апр 24 09:58 apt/
+drwxr-xr-x  2 root          root          4096 фев  3 21:27 aspell/
+drwxr-xr-x  2 avahi-autoipd avahi-autoipd 4096 фев  3 21:25 avahi-autoipd/
+drwxr-xr-x  2 root          root          4096 янв  6 11:30 bluetooth/
+drwxr-xr-x  2 root          root          4096 окт 30  2018 boltd/
+drwxr-xr-x  4 colord        colord        4096 апр 15 18:41 colord/
+drwxr-xr-x  2 root          root          4096 мая  5  2018 command-not-found/
+drwxr-xr-x  2 root          root          4096 апр 15 18:40 dbus/
+drwxr-xr-x  2 root          root          4096 апр 16  2018 dhcp/
+drwxr-xr-x  4 root          root          4096 фев  3 21:25 dictionaries-common/
+drwxr-xr-x  7 root          root          4096 апр 24 09:59 dpkg/
+drwxr-xr-x  3 root          root          4096 фев  3 21:24 emacsen-common/
+drwxr-xr-x  5 root          root          4096 апр 15 20:17 fwupd/
+drwxr-xr-x  6 gdm           gdm           4096 апр 15 20:45 gdm3/
+drwxr-xr-x  3 geoclue       geoclue       4096 апр 15 18:41 geoclue/
+drwxr-xr-x  4 root          root          4096 фев  3 21:24 ghostscript/
+drwxr-xr-x  3 root          root          4096 фев  3 21:24 grub/
+drwxr-xr-x  2 root          root          4096 мар  7  2018 hp/
+drwxr-xr-x  2 root          root          4096 апр 15 20:18 initramfs-tools/
+drwxr-xr-x  2 root          root          4096 фев  3 21:24 ispell/
+drwxr-xr-x  3 root          root          4096 фев  3 21:25 libreoffice/
+drwxr-xr-x  3 root          root          4096 фев  3 21:25 libxml-sax-perl/
+drwxr-xr-x  3 root          root          4096 фев  3 21:27 locales/
+drwxr-xr-x  2 root          root          4096 апр 24 00:06 logrotate/
+drwxr-xr-x  2 root          root          4096 фев  3 21:25 man-db/
+drwxr-xr-x  3 root          root          4096 апр 15 21:18 mecab/
+drwxr-xr-x  2 root          root          4096 апр 24  2018 misc/
+drwxr-xr-x  2 root          root          4096 апр 24 00:06 mlocate/
+drwxrwxrwx  8 mysql         mysql         4096 апр 24 14:34 mysql/
+drwxrwx---  2 mysql         mysql         4096 апр 15 21:19 mysql-files/
+drwxr-x---  2 mysql         mysql         4096 апр 15 21:19 mysql-keyring/
+drwxr-xr-x  2 root          root          4096 апр 23 17:58 NetworkManager/
+drwxr-xr-x  2 root          root          4096 мар  7  2017 os-prober/
+drwxr-xr-x  2 root          root          4096 апр 24 10:10 PackageKit/
+drwxr-xr-x  2 root          root          4096 апр 15 20:17 pam/
+drwxr-xr-x  2 root          root          4096 апр 15 20:46 plymouth/
+drwx------  3 root          root          4096 фев  3 21:22 polkit-1/
+drwx------  3 root          root          4096 апр 15 18:40 private/
+drwxr-xr-x  2 root          root          4096 фев  3 21:27 python/
+drwxr-xr-x 18 root          root          4096 апр 24 10:14 snapd/
+drwxr-xr-x  2 root          root          4096 сен  7  2019 snmp/
+drwxr-xr-x  3 root          root          4096 фев  3 21:22 sudo/
+drwxr-xr-x  6 root          root          4096 апр 15 18:40 systemd/
+drwxrwxr-x  2 root          root          4096 апр 15 18:23 ubiquity/
+drwxr-xr-x  2 root          root          4096 апр 15 18:40 ubuntu-drivers-common/
+drwxr-xr-x  2 root          root          4096 апр 15 20:50 ubuntu-release-upgrader/
+drwxr-xr-x  3 root          root          4096 апр 15 21:02 ucf/
+drwx------  2 root          root          4096 апр 20 20:51 udisks2/
+drwxr-xr-x  2 root          root          4096 ноя 25 18:23 unattended-upgrades/
+drwxr-xr-x  2 root          root          4096 апр 15 20:50 update-manager/
+drwxr-xr-x  4 root          root          4096 апр 24 10:37 update-notifier/
+drwxr-xr-x  2 root          root          4096 апр 24 09:59 upower/
+drwxr-xr-x  3 root          root          4096 фев  3 21:24 ureadahead/
+drwxr-xr-x  2 root          root          4096 мар  6  2018 usb_modeswitch/
+drwxr-xr-x  2 root          root          4096 фев  3 21:23 usbutils/
+drwxr-xr-x  2 root          root          4096 апр 15 20:58 VBoxGuestAdditions/
+drwxr-xr-x  3 root          root          4096 фев  3 21:22 vim/
+drwxr-xr-x  2 root          root          4096 апр 15 20:40 whoopsie/
+drwxr-xr-x  2 root          root          4096 фев  3 21:26 xfonts/
+drwxr-xr-x  2 root          root          4096 апр 15 20:27 xkb/
+ann@ann-VirtualBox:/var/lib$ cd mysql
+ann@ann-VirtualBox:/var/lib/mysql$ mysqldump example > examp_1.sql
+ann@ann-VirtualBox:/var/lib/mysql$ ll
+итого 171188
+drwxrwxrwx  8 mysql mysql     4096 апр 24 15:04  ./
+drwxr-xr-x 66 root  root      4096 апр 15 21:19  ../
+-rw-r-----  1 mysql mysql       56 апр 15 21:19  auto.cnf
+-rw-r-----  1 mysql mysql      502 апр 15 21:19  binlog.000001
+-rw-r-----  1 mysql mysql    86207 апр 24 14:36  binlog.000002
+-rw-r-----  1 mysql mysql       32 апр 15 21:19  binlog.index
+-rw-------  1 mysql mysql     1680 апр 15 21:19  ca-key.pem
+-rw-r--r--  1 mysql mysql     1112 апр 15 21:19  ca.pem
+-rw-r--r--  1 mysql mysql     1112 апр 15 21:19  client-cert.pem
+-rw-------  1 mysql mysql     1680 апр 15 21:19  client-key.pem
+-rw-r--r--  1 ann   ann       1891 апр 24 15:04  examp_1.sql
+drwxrwxrwx  2 mysql mysql     4096 апр 24 14:36  example/
+-rw-r-----  1 mysql mysql     3609 апр 15 21:19  ib_buffer_pool
+-rw-r-----  1 mysql mysql 12582912 апр 24 14:37  ibdata1
+-rw-r-----  1 mysql mysql 50331648 апр 24 14:37  ib_logfile0
+-rw-r-----  1 mysql mysql 50331648 апр 15 21:19  ib_logfile1
+-rw-r-----  1 mysql mysql 12582912 апр 15 21:19  ibtmp1
+drwxr-x---  2 mysql mysql     4096 апр 15 21:19 '#innodb_temp'/
+drwxr-x---  2 mysql mysql     4096 апр 21 13:08  mysql/
+-rw-r-----  1 mysql mysql 25165824 апр 24 14:36  mysql.ibd
+drwxr-x---  2 mysql mysql     4096 апр 15 21:19  performance_schema/
+-rw-------  1 mysql mysql     1680 апр 15 21:19  private_key.pem
+-rw-r--r--  1 mysql mysql      452 апр 15 21:19  public_key.pem
+-rw-r--r--  1 mysql mysql     1112 апр 15 21:19  server-cert.pem
+-rw-------  1 mysql mysql     1676 апр 15 21:19  server-key.pem
+drwxr-x---  2 mysql mysql     4096 апр 24 12:32  shop/
+drwxr-x---  2 mysql mysql     4096 апр 15 21:19  sys/
+-rw-r-----  1 mysql mysql 11534336 апр 24 14:36  undo_001
+-rw-r-----  1 mysql mysql 12582912 апр 24 14:36  undo_002
+ann@ann-VirtualBox:/var/lib/mysql$ 
+ann@ann-VirtualBox:/var/lib/mysql$ mysql
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 77
+Server version: 8.0.19 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> create database sample;
+Query OK, 1 row affected (0,02 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| example            |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sample             |
+| shop               |
+| sys                |
++--------------------+
+7 rows in set (0,00 sec)
+mysql> use sample;
+Database changed
+mysql> source examp_1.sql;
+Query OK, 0 rows affected (0,00 sec)
+mysql> describe sample;
+ERROR 1146 (42S02): Table 'sample.sample' doesn't exist
+mysql> show tables;
++------------------+
+| Tables_in_sample |
++------------------+
+| users            |
++------------------+
+1 row in set (0,01 sec)
+mysql>\q
+Bye
+ann@ann-VirtualBox:/var/lib/mysql$
