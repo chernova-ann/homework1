@@ -7,7 +7,7 @@ ann@ann-VirtualBox:~$ mysql
 mysql: [Warning] World-writable config file '/home/ann/.my.cnf' is ignored.
 ERROR 1045 (28000): Access denied for user 'ann'@'localhost' (using password: NO)
 ann@ann-VirtualBox:~$ cat .my.cnf
-[mysql]
+[client]
 user=root
 password=
 ann@ann-VirtualBox:~$ ls -la ~ | grep .my.cnf
@@ -16,7 +16,7 @@ ann@ann-VirtualBox:~$ mysql
 mysql: [Warning] World-writable config file '/home/ann/.my.cnf' is ignored.
 ERROR 1045 (28000): Access denied for user 'ann'@'localhost' (using password: NO)
 ann@ann-VirtualBox:~$ cat .my.cnf
-[mysql]
+[client]
 user=root
 password=
 ann@ann-VirtualBox:~$ sudo chmod 0644 /home/ann/.my.cnf
